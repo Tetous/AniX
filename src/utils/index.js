@@ -1,7 +1,7 @@
 export const trim = (str, len) =>
   str?.length > len ? `${str.substr(0, len) + "..."}` : str;
 
-export const titleCase = (str) => str[0] + str.slice(1).toLowerCase();
+export const titleCase = (str) => str && str[0] + str.slice(1).toLowerCase();
 
 export const months = [
   "Jan",

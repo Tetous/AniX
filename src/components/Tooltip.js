@@ -22,7 +22,7 @@ export default function Tooltip({ flip, anime }) {
 
       <div>
         {anime.genres.slice(0, 2).map((genre) => (
-          <Badge key={genre} text={genre} color={anime.coverImage.color} />
+          <Badge key={genre} text={genre} />
         ))}
       </div>
     </div>

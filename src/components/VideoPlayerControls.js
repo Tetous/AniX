@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import PlayerIcon from "./PlayerIcon";
 
-export default function PlayerControls({
-  seek,
-  show,
+export default function VideoPlayerControls({
   playerRef,
+  forward,
   togglePlay,
+  backward,
   playing,
 }) {
   const progressRef = useRef(null);
@@ -13,12 +13,14 @@ export default function PlayerControls({
   const scrub = (e) => {
     const progress = progressRef.current;
     const player = playerRef.current;
-    const diff = e.nativeEvent.offsetX / progress.offsetWidth;
-    player.currentTime = diff * player.duration;
+
+    const time =
+      (e.nativeEvent.offsetX / progress.offsetWidth) * player.duration;
+    player.currentTime = time;
   };
 
   return (
-    <div className={`player-controls ${show ? "opacity-1" : "opacity-0"}`}>
+    <div className="player-controls">
       <div
         className="cursor-pointer w-full h-1 bg-pink-900"
         ref={progressRef}
@@ -28,9 +30,9 @@ export default function PlayerControls({
       </div>
 
       <div className="flex items-center justify-between p-4">
-        <PlayerIcon icon="backward" onClick={() => seek(-30)} />
+        <PlayerIcon icon="backward" onClick={backward} />
         <PlayerIcon icon={playing ? "pause" : "play"} onClick={togglePlay} />
-        <PlayerIcon icon="forward" onClick={() => seek(30)} />
+        <PlayerIcon icon="forward" onClick={forward} />
       </div>
     </div>
   );

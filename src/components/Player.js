@@ -3,6 +3,7 @@ import PlayerControls from "./PlayerControls";
 
 export default function Player({ src, poster }) {
   const playerRef = useRef(null);
+
   const [controls, setControls] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [resume, setResume] = useState(0);
@@ -21,20 +22,16 @@ export default function Player({ src, poster }) {
     }
   };
 
-  const forward = () => (playerRef.current.currentTime += 30);
-  const backward = () => (playerRef.current.currentTime -= 30);
+  const seek = (duration) => (playerRef.current.currentTime += duration);
 
   const showControls = () => {
-    if (src) {
-      setControls(true);
-    }
+    src && setControls(true);
   };
 
   useEffect(() => {
     const player = playerRef.current;
 
     if (src) {
-      player.pause();
       setPlaying(false);
       setControls(true);
       setResume(0);
@@ -68,8 +65,7 @@ export default function Player({ src, poster }) {
       ></video>
 
       <PlayerControls
-        forward={forward}
-        backward={backward}
+        seek={seek}
         playing={playing}
         togglePlay={togglePlay}
         playerRef={playerRef}

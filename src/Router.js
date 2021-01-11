@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import HallOfFame from "./pages/HallOfFame";
-import Anime from "./pages/Anime";
+import HomePage from "./pages/HomePage";
+import AnimePage from "./pages/AnimePage";
 import Navbar from "./components/Navbar";
 
 export default function AppRouter() {
@@ -8,8 +8,8 @@ export default function AppRouter() {
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/:slug" component={Anime} />
-        <Route path="/" component={HallOfFame} />
+        <Route path="/:slug" component={AnimePage} />
+        <Route path="/" component={HomePage} />
       </Switch>
     </Router>
   );

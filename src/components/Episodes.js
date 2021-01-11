@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Episode from "./Episode";
 import { fetchWrapper } from "../utils";
 
 export default function Episodes({ setSrc, episodes }) {
@@ -16,19 +17,14 @@ export default function Episodes({ setSrc, episodes }) {
   };
 
   return (
-    <div className="mt-8 grid grid-cols-10 gap-6">
-      {episodes?.slice(0, 10).map((episode, idx) => (
-        <div
-          key={episode}
-          className={`episode ${
-            selected === idx
-              ? `bg-blue text-white-neutral`
-              : `bg-white-800 dark:bg-violet-800`
-          }`}
-          onClick={() => getEpisode(idx, episode)}
-        >
-          <p>{idx + 1}</p>
-        </div>
+    <div className="mt-6 grid grid-cols-12 gap-4">
+      {episodes?.slice(0, 24).map((episode, idx) => (
+        <Episode
+          episode={episode}
+          idx={idx}
+          getEpisode={getEpisode}
+          selected={selected}
+        />
       ))}
     </div>
   );

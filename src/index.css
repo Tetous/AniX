@@ -20,4 +20,8 @@
   .player-controls {
     @apply bg-violet-800 bg-opacity-90 w-full h-12 absolute bottom-0 left-0;
   }
+
+  .search {
+    @apply bg-white-800 dark:bg-violet-800 py-2 px-4 rounded focus:outline-none pl-10 shadow-sm;
+  }
 }

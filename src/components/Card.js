@@ -7,7 +7,10 @@ export default function Card({ anime, idx }) {
 
   return (
     <Link
-      to={`/${anime.slug}`}
+      to={{
+        pathname: `/${anime.slug}`,
+        anime,
+      }}
       className="relative cursor-pointer"
       onMouseEnter={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
@@ -18,7 +21,7 @@ export default function Card({ anime, idx }) {
         alt="poster"
       />
       <p className="pt-3 text-xs font-bold tracking-wide text-black-700 dark:text-gray-700">
-        {anime.title.english}
+        {anime.title.english ? anime.title.english : anime.title.romaji}
       </p>
       {tooltip && <Tooltip anime={anime} flip={idx % 5 === 0} />}
     </Link>

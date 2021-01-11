@@ -1,20 +1,18 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Info from "../components/Info";
 import Player from "../components/Player";
 import Episodes from "../components/Episodes";
 import { formatDesc } from "../utils";
-import animes from "../data/top_animes.json";
 
-export default function Anime() {
+export default function AnimePage() {
   const [anime, setAnime] = useState(null);
   const [src, setSrc] = useState(null);
-  const { slug } = useParams();
+  const location = useLocation();
 
   useEffect(() => {
-    const anime = animes.find((anime) => anime.slug === slug);
-    setAnime(anime);
-  }, [slug]);
+    setAnime(location.anime);
+  }, [location.anime]);
 
   return (
     <div>

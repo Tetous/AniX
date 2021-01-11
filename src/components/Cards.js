@@ -1,7 +1,6 @@
 import Card from "./Card";
-import animes from "../data/top_animes.json";
 
-export default function Cards() {
+export default function Cards({ animes }) {
   return (
     <div className="grid grid-cols-5 gap-8">
       {animes.slice(0, 10).map((anime, idx) => (

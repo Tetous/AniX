@@ -1,6 +1,6 @@
 import Cards from "../components/Cards";
 
-export default function HallOfFame() {
+export default function HomePage() {
   return (
     <div className="layout py-8">
       <h2 className="text-xl pb-4">Top Animes</h2>
