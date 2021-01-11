@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .layout {
+    @apply w-4/5 mx-auto;
+  }
+
+  .tooltip {
+    @apply absolute z-10 flex flex-col p-4 text-xs text-gray-800 rounded top-4 shadow-lg bg-violet-800 h-36 w-72;
+  }
+}
