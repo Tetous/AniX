@@ -10,6 +10,14 @@
   }
 
   .tooltip {
-    @apply absolute z-10 flex flex-col p-4 text-xs text-gray-800 rounded top-4 shadow-lg bg-violet-800 h-36 w-72;
+    @apply absolute z-10 flex flex-col p-4 text-xs text-black-800 dark:text-gray-800 rounded top-4 shadow-lg bg-white-800 dark:bg-violet-800 h-36 w-72;
+  }
+
+  .episode {
+    @apply text-center py-1 rounded-sm text-sm cursor-pointer flex justify-center;
+  }
+
+  .player-controls {
+    @apply bg-violet-800 bg-opacity-90 w-full h-12 absolute bottom-0 left-0;
   }
 }

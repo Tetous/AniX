@@ -17,7 +17,7 @@ export default function Card({ anime, idx }) {
         src={anime.coverImage.extraLarge}
         alt="poster"
       />
-      <p className="pt-3 text-xs font-bold tracking-wide text-gray-700">
+      <p className="pt-3 text-xs font-bold tracking-wide text-black-700 dark:text-gray-700">
         {anime.title.english}
       </p>
       {tooltip && <Tooltip anime={anime} flip={idx % 5 === 0} />}

@@ -28,3 +28,9 @@ export const formatDate = (date) => {
 
 export const formatDesc = (desc) =>
   desc?.substr(0, 580).split("\n").slice(0, 2).join("\n");
+
+export const fetchWrapper = async (endpoint) => {
+  const res = await fetch(endpoint);
+  const data = await res.json();
+  return data;
+};
