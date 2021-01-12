@@ -22,6 +22,7 @@ module.exports = {
         "black-800": "#404E5C",
         "black-700": "#647380",
         "white-neutral": "#FFF",
+        pink: "#E34F85",
       },
       spacing: {
         "108": "34rem",

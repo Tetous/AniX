@@ -1,8 +1,18 @@
 import { fetchWrapper } from "../utils";
 
+const getRomaji = async (title) => {
+  let endpoint = process.env.REACT_APP_CF_ENDPOINT;
+  endpoint += `/getAnixRomaji?title=${title}`;
+
+  const { success, data } = await fetchWrapper(endpoint);
+  return { success, title: data.title };
+};
+
 export const searchAnimes = async (searchTerm) => {
+  const { title } = await getRomaji(searchTerm.trim());
+
   let endpoint = process.env.REACT_APP_SCRAPER_ENDPOINT;
-  endpoint += `?url=https://4anime.to/?s=${searchTerm.trim()}`;
+  endpoint += `?url=https://4anime.to/?s=${title}`;
   endpoint += `&spider_name=search_animes`;
 
   const { status, items } = await fetchWrapper(endpoint);
@@ -19,9 +29,9 @@ export const getAnime = async (slug) => {
 };
 
 export const getStream = async (url) => {
-  let endpoint = process.env.REACT_APP_CF_STREAM;
-  endpoint += `?url=${url}`;
+  let endpoint = process.env.REACT_APP_CF_ENDPOINT;
+  endpoint += `/getAnixStream?url=${url}`;
 
-  const { success, data } = await fetchWrapper(`${endpoint}?url=${url}`);
+  const { success, data } = await fetchWrapper(endpoint);
   return { success, link: data.link };
 };

@@ -15,8 +15,9 @@ export default function AnimePage() {
   const location = useLocation();
 
   useEffect(() => {
-    if (location.anime.id) {
+    if (location?.anime?.id) {
       setAnime(location.anime);
+      setLoading(false);
     } else {
       getAnime(slug).then(({ anime }) => {
         setAnime(anime);

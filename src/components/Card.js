@@ -27,3 +27,5 @@ export default function Card({ anime, idx }) {
     </Link>
   );
 }
+
+// prev: w-48 h-64
