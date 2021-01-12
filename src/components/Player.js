@@ -16,8 +16,8 @@ export default function Player({ src, poster }) {
       player.currentTime = resume;
       player.play();
     } else {
-      setPlaying(false);
       setResume(player.currentTime);
+      setPlaying(false);
       player.load();
     }
   };
@@ -32,11 +32,11 @@ export default function Player({ src, poster }) {
     const player = playerRef.current;
 
     if (src) {
-      setPlaying(false);
-      setControls(true);
       setResume(0);
+      setPlaying(true);
+      setControls(true);
       player.setAttribute("src", src);
-      player.load();
+      player.play();
     }
   }, [src]);
 

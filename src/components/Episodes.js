@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Episode from "./Episode";
-import { fetchWrapper } from "../utils";
+import { getStream } from "../utils/api";
 
 export default function Episodes({ setSrc, episodes }) {
   const [selected, setSelected] = useState(null);
@@ -8,11 +8,10 @@ export default function Episodes({ setSrc, episodes }) {
   const getEpisode = async (idx, episode) => {
     setSelected(idx);
 
-    let endpoint = process.env.REACT_APP_CF_STREAM;
-    const { success, data } = await fetchWrapper(`${endpoint}?url=${episode}`);
+    const { success, link } = await getStream(episode);
 
     if (success) {
-      setSrc(data.link);
+      setSrc(link);
     }
   };
 
@@ -20,6 +19,7 @@ export default function Episodes({ setSrc, episodes }) {
     <div className="mt-6 grid grid-cols-12 gap-4">
       {episodes?.slice(0, 24).map((episode, idx) => (
         <Episode
+          key={episode}
           episode={episode}
           idx={idx}
           getEpisode={getEpisode}

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { fetchWrapper } from "../utils";
+import { searchAnimes } from "../utils/api";
 
-export default function Search({ data, setAnimes, setTitle }) {
+export default function Search({ data, setAnimes, setTitle, setLoading }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const reset = () => {
@@ -12,16 +12,16 @@ export default function Search({ data, setAnimes, setTitle }) {
 
   const handleSearch = async (e) => {
     if (e.key === "Enter") {
-      let endpoint = process.env.REACT_APP_SEARCH_ENDPOINT;
-      endpoint += `?url=https://4anime.to/?s=${searchTerm}`;
-      endpoint += `&spider_name=search_animes`;
+      setLoading(true);
 
-      const { status, items: animes } = await fetchWrapper(endpoint);
+      const { status, animes } = await searchAnimes(searchTerm);
 
       if (status === "ok") {
         setTitle("Search Results");
         setAnimes(animes);
       }
+
+      setLoading(false);
     }
   };
 

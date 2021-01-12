@@ -9,11 +9,15 @@ export default function Tooltip({ flip, anime }) {
           {titleCase(anime.season)} {anime.seasonYear}
         </h2>
 
-        <div className="ml-auto">
-          <i className="fal fa-smile pr-2"></i>
-          <span className="font-medium">{anime.averageScore}%</span>
-        </div>
+        {anime.averageScore && (
+          <div className="ml-auto">
+            <i className="fal fa-smile pr-2"></i>
+            <span className="font-medium">{anime.averageScore}%</span>
+          </div>
+        )}
       </div>
+
+      {anime.studio && <p className="text-pink-500 pb-1">{anime.studio}</p>}
 
       <div className="space-x-1 mb-6">
         <span>{anime.format}</span> <span>&bull;</span>{" "}

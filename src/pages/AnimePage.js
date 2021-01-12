@@ -1,18 +1,31 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import Info from "../components/Info";
 import Player from "../components/Player";
 import Episodes from "../components/Episodes";
+import AnimePageSkeleton from "../skeletons/pages/AnimePageSkeleton";
 import { formatDesc } from "../utils";
+import { getAnime } from "../utils/api";
 
 export default function AnimePage() {
   const [anime, setAnime] = useState(null);
   const [src, setSrc] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const { slug } = useParams();
   const location = useLocation();
 
   useEffect(() => {
-    setAnime(location.anime);
-  }, [location.anime]);
+    if (location.anime.id) {
+      setAnime(location.anime);
+    } else {
+      getAnime(slug).then(({ anime }) => {
+        setAnime(anime);
+        setLoading(false);
+      });
+    }
+  }, [slug, location.anime]);
+
+  if (loading) return <AnimePageSkeleton />;
 
   return (
     <div>
