@@ -37,3 +37,8 @@ export const fetchWrapper = async (endpoint) => {
   const data = await res.json();
   return data;
 };
+
+export const toggleTheme = () => {
+  const element = document.querySelector("html");
+  element.classList.toggle("dark");
+};

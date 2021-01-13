@@ -23,7 +23,11 @@ export default function PlayerVolume({ player }) {
 
   return (
     <React.Fragment>
-      <PlayerIcon icon="volume" size="text-lg" onClick={toggleMute} />
+      <PlayerIcon
+        icon={muted ? "volume-mute" : "volume"}
+        size="text-lg"
+        onClick={toggleMute}
+      />
       <input
         className="w-28 bg-white-neutral bg-opacity-20 appearance-none focus:outline-none mr-8 rounded"
         type="range"
