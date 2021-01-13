@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;700&display=swap");
 
-:root {
-  --plyr-color-main: #e34f85;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,15 +17,23 @@
     @apply text-center py-1 rounded-sm text-sm cursor-pointer flex justify-center;
   }
 
-  .player-controls {
-    @apply bg-violet-800 bg-opacity-90 w-full h-12 absolute bottom-0 left-0;
-  }
-
   .search {
     @apply bg-white-800 dark:bg-violet-800 py-2 px-4 rounded focus:outline-none pl-10 shadow-sm;
+  }
+
+  .player-container {
+    @apply opacity-0 hover:opacity-100 bg-violet-skeleton bg-opacity-90 w-full absolute bottom-0 left-0 py-2 flex items-center px-2;
   }
 
   .skeleton-base {
     @apply animate-pulse rounded bg-white-skeleton dark:bg-violet-skeleton;
   }
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background-color: #10b981;
 }
