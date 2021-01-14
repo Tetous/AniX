@@ -3,6 +3,7 @@ import PlayerProgress from "./PlayerProgress";
 import PlayerVolume from "./PlayerVolume";
 import PlayerFullscreen from "./PlayerFullscreen";
 import PlayerPlay from "./PlayerPlay";
+import StyledPlayer from "../../styles/Player";
 
 export default function Player({ src, poster }) {
   const [playing, setPlaying] = useState(null);
@@ -21,28 +22,25 @@ export default function Player({ src, poster }) {
   }, [src]);
 
   return (
-    <div className="rounded h-96 shadow relative">
-      <video
-        ref={playerRef}
-        className="h-full w-full object-cover rounded"
-        src={src}
-        poster={poster}
-      />
+    <StyledPlayer>
+      <video ref={playerRef} src={src} poster={poster} />
 
       {src && (
-        <div className="player-container">
+        <div className="plyr-controls flex-center">
           <PlayerPlay
             playing={playing}
             setPlaying={setPlaying}
             player={playerRef.current}
           />
+
           <PlayerProgress player={playerRef.current} />
-          <div className="ml-auto flex items-center">
-            <PlayerVolume player={playerRef.current} />
+          <PlayerVolume player={playerRef.current} />
+
+          <div className="flex-end">
             <PlayerFullscreen player={playerRef.current} />
           </div>
         </div>
       )}
-    </div>
+    </StyledPlayer>
   );
 }

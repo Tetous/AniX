@@ -16,7 +16,7 @@ export default function Episodes({ setSrc, episodes }) {
   };
 
   return (
-    <div className="mt-8 grid grid-cols-12 gap-4">
+    <div className="episodes">
       {episodes?.slice(0, 24).map((episode, idx) => (
         <Episode
           key={episode}

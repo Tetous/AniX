@@ -1,31 +1,28 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Tooltip from "./Tooltip";
+import Poster from "../styles/Poster";
 
 export default function Card({ anime, idx }) {
   const [tooltip, setTooltip] = useState(false);
 
   return (
     <Link
+      className="relative"
       to={{
         pathname: `/${anime.slug}`,
         anime,
       }}
-      className="relative cursor-pointer"
       onMouseEnter={() => setTooltip(true)}
       onMouseLeave={() => setTooltip(false)}
     >
-      <img
-        className="w-48 h-64 rounded shadow"
-        src={anime.coverImage.extraLarge}
-        alt="poster"
-      />
-      <p className="pt-3 text-xs font-bold tracking-wide text-black-700 dark:text-gray-700">
+      <Poster src={anime.coverImage.extraLarge} alt="poster" />
+
+      <p className="text-sm text-light">
         {anime.title.english ? anime.title.english : anime.title.romaji}
       </p>
+
       {tooltip && <Tooltip anime={anime} flip={idx % 5 === 0} />}
     </Link>
   );
 }
-
-// prev: w-48 h-64

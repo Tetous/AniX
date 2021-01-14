@@ -3,7 +3,7 @@ import { formatDate } from "../utils";
 
 export default function Info({ anime }) {
   return (
-    <div className="bg-white-800 dark:bg-violet-800 h-108 w-48 rounded p-4 space-y-4 mb-1">
+    <div className="info">
       <InfoBlock name="Status" value={anime?.status} />
       <InfoBlock name="Episodes" value={anime?.episodes} />
       <InfoBlock name="Duration" value={anime?.duration} />

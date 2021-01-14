@@ -22,22 +22,19 @@ export default function PlayerVolume({ player }) {
   };
 
   return (
-    <React.Fragment>
+    <div className="volume flex-center">
       <PlayerIcon
         icon={muted ? "volume-mute" : "volume"}
-        size="text-lg"
         onClick={toggleMute}
       />
       <input
-        className="w-28 bg-white-neutral bg-opacity-20 appearance-none focus:outline-none mr-8 rounded"
         type="range"
         max="1"
         min="0.1"
         value={volume}
         step="0.05"
         onChange={handleVolume}
-        style={{ height: "6px" }}
       />
-    </React.Fragment>
+    </div>
   );
 }

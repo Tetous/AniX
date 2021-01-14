@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Card from "./Card";
+import StyledCards from "../styles/Cards";
 
 export default function Cards({ animes }) {
   const [end, setEnd] = useState(10);
@@ -39,13 +40,13 @@ export default function Cards({ animes }) {
   }, [element]);
 
   return (
-    <div>
-      <div className="grid grid-cols-5 gap-8">
+    <React.Fragment>
+      <StyledCards>
         {animes.slice(0, end).map((anime, idx) => (
           <Card key={anime.slug} anime={anime} idx={idx + 1} />
         ))}
-      </div>
+      </StyledCards>
       <span ref={setElement} />
-    </div>
+    </React.Fragment>
   );
 }

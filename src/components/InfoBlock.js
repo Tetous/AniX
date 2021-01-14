@@ -4,9 +4,9 @@ export default function InfoBlock({ name, value }) {
   }
 
   return (
-    <div className="flex flex-col">
-      <span className="pb-1">{name}</span>
-      <span className="text-sm text-black-700 dark:text-gray-700">{value}</span>
+    <div className="flex-col space-x">
+      <span>{name}</span>
+      <span className="text-sm text-light">{value}</span>
     </div>
   );
 }

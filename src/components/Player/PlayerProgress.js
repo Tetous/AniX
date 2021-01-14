@@ -36,19 +36,10 @@ export default function PlayerProgress({ player }) {
 
   return (
     <React.Fragment>
-      <div
-        ref={progressRef}
-        className="w-1/2 bg-white-neutral rounded bg-opacity-20 cursor-pointer mr-2"
-        onClick={scrub}
-        style={{ height: "6px" }}
-      >
-        <div
-          ref={progressBarRef}
-          className="progress-filled w-0 bg-green-500 rounded"
-          style={{ height: "6px" }}
-        />
+      <div className="progress-bar pointer" ref={progressRef} onClick={scrub}>
+        <div className="progress-filled" ref={progressBarRef} />
       </div>
-      <span className="text-sm w-2">{remaining}</span>
+      <span className="text-sm">{remaining}</span>
     </React.Fragment>
   );
 }
