@@ -4,7 +4,7 @@ import StyledTooltip from "../styles/Tooltip";
 
 export default function Tooltip({ flip, anime }) {
   return (
-    <StyledTooltip>
+    <StyledTooltip flip={flip}>
       <div className="flex-between">
         <p>
           {titleCase(anime.season)} {anime.seasonYear}

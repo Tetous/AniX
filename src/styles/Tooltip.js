@@ -3,7 +3,8 @@ import styled from "styled-components";
 const Tooltip = styled.div`
   position: absolute;
   top: 4px;
-  left: 170px;
+  left: ${(props) => !props.flip && "170px"};
+  right: ${(props) => props.flip && "205px"};
   width: 280px;
   background-color: var(--bg-nemesis);
   padding: 1rem;
@@ -14,6 +15,10 @@ const Tooltip = styled.div`
   .format-episodes {
     padding: 0.8rem 0;
     font-size: 0.85rem;
+  }
+
+  @media screen and (max-width: 1093px) {
+    display: none;
   }
 `;
 

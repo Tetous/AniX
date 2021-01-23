@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Player = styled.div`
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 50vh;
   border-radius: 4px;
 
   video {
@@ -64,6 +64,14 @@ const Player = styled.div`
     height: 15px;
     border-radius: 7px;
     background-color: var(--green);
+  }
+
+  @media screen and (max-width: 740px) {
+    height: 40vh;
+  }
+
+  @media screen and (max-width: 620px) {
+    height: 30vh;
   }
 `;
 

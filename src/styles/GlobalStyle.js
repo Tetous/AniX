@@ -3,9 +3,10 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 	:root {
 		--bg: #0B1622;
+		--skeleton-bg: #1A2533;
 		--font: 'Overpass';
-		--primaryColor: #C9E7D3;
-		--secondaryColor: #8BA0B2;
+		--primary-color: #C9E7D3;
+		--secondary-color: #8BA0B2;
 		--bg-nemesis: #151F2E;
 		--pink: #E34F85;
 		--blue: #3DB4F2;
@@ -30,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 1rem;
 		font-family: var(--font);
 		background-color: var(--bg);
-		color: var(--primaryColor);
+		color: var(--primary-color);
 		overflow-x: hidden;
 		line-height: 1.8;
 	}

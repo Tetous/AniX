@@ -6,6 +6,7 @@ import Episodes from "../components/Episodes";
 import { formatDesc } from "../utils";
 import { getAnime } from "../utils/api";
 import StyledAnimePage from "../styles/AnimePage";
+import AnimePageSkeleton from "../skeletons/AnimePageSkeleton";
 
 export default function AnimePage() {
   const [anime, setAnime] = useState(null);
@@ -26,7 +27,7 @@ export default function AnimePage() {
     }
   }, [slug, location.anime]);
 
-  if (loading) return null;
+  if (loading) return <AnimePageSkeleton />;
 
   return (
     <StyledAnimePage>

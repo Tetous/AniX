@@ -11,7 +11,7 @@
 }
 
 .text-light {
-  color: var(--secondaryColor);
+  color: var(--secondary-color);
 }
 
 .relative {
@@ -42,6 +42,11 @@
   margin-left: auto;
 }
 
+/* others */
 .pointer {
   cursor: pointer;
+}
+
+.transparent {
+  background-color: transparent !important;
 }

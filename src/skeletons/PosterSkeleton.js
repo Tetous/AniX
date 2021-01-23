@@ -1,9 +1,9 @@
 import styled from "styled-components";
+import Skeleton from "../styles/Skeleton";
 
-const Poster = styled.img`
+const PosterSkeleton = styled(Skeleton)`
   width: 160px;
   height: 230px;
-  border-radius: 4px;
 
   @media screen and (max-width: 1031px) {
     width: 180px;
@@ -46,4 +46,4 @@ const Poster = styled.img`
   }
 `;
 
-export default Poster;
+export default PosterSkeleton;
