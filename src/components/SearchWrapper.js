@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Search from "./Search";
 import ToggleTheme from "./ToggleTheme";
 

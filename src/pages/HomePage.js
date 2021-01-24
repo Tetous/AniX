@@ -9,7 +9,6 @@ export default function HomePage() {
   const [animes, setAnimes] = useState(data);
   const [title, setTitle] = useState("Top Animes");
   const [loading, setLoading] = useState(false);
-  const [theme, setTheme] = useState("dark");
 
   return (
     <Layout>
