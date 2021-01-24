@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Skeleton from "../styles/Skeleton";
+import Skeleton from "./Skeleton";
 
 const PosterSkeleton = styled(Skeleton)`
   width: 160px;

@@ -48,7 +48,7 @@ const Search = ({ setAnimes, setTitle, setLoading }) => {
       {searchTerm && (
         <div className="flex-center space-x">
           <i
-            className="fal fa-times fa-lg pointer text-light"
+            className="fal fa-times fa-lg pointer text-light margin-r"
             onClick={reset}
           />
           <Badge text={searchTerm} />

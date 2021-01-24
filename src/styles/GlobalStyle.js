@@ -1,20 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-	:root {
-		--bg: #0B1622;
-		--skeleton-bg: #1A2533;
-		--font: 'Overpass';
-		--primary-color: #C9E7D3;
-		--secondary-color: #8BA0B2;
-		--bg-nemesis: #151F2E;
-		--pink: #E34F85;
-		--blue: #3DB4F2;
-		--white: #FFF;
-		--green: #16A34A;
-		--plyr-overlay: rgba(21, 31, 46, 0.9);
-		--bs1: 0 10px 20px rgba(0,0,0,0.1),0 6px 6px rgba(0,0,0,0.1);
-	}
+	:root {}
 
 	html {
 		font-size: 16px;
@@ -29,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
 	body {
 		font-size: 1rem;
-		font-family: var(--font);
+		font-family: var(--font), sans-serif;
 		background-color: var(--bg);
 		color: var(--primary-color);
 		overflow-x: hidden;

@@ -28,7 +28,7 @@ export default function PlayerProgress({ player }) {
   useEffect(() => {
     const updateRemaining = () => {
       const remaining = (player?.currentTime - player?.duration) / 60;
-      setRemaining(remaining.toFixed(2));
+      setRemaining(Number(remaining.toFixed(2)));
     };
 
     player?.addEventListener("timeupdate", updateRemaining);
@@ -39,7 +39,7 @@ export default function PlayerProgress({ player }) {
       <div className="progress-bar pointer" ref={progressRef} onClick={scrub}>
         <div className="progress-filled" ref={progressBarRef} />
       </div>
-      <span className="text-sm">{remaining}</span>
+      {!Number.isNaN(remaining) && <span className="text-sm">{remaining}</span>}
     </React.Fragment>
   );
 }

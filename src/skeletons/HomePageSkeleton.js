@@ -1,6 +1,6 @@
 import Skeleton from "../styles/Skeleton";
 import StyledCards from "../styles/Cards";
-import PosterSkeleton from "./PosterSkeleton";
+import PosterSkeleton from "../styles/PosterSkeleton";
 
 export default function HomePageSkeleton() {
   const skeletons = [1, 2, 3, 4, 5];

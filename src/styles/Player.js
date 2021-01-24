@@ -4,6 +4,7 @@ const Player = styled.div`
   position: relative;
   width: 100%;
   border-radius: 4px;
+  color: var(--white);
 
   video {
     width: 100%;

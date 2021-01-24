@@ -6,7 +6,7 @@ const Badge = styled.div`
   background-color: var(--pink);
   color: var(--white);
   font-weight: 600;
-  margin-left: 1rem;
+  margin-right: 1rem;
 `;
 
 export default Badge;
