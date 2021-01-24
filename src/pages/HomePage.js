@@ -22,7 +22,7 @@ export default function HomePage() {
 
       {!loading && (
         <React.Fragment>
-          <h2>{title}</h2>
+          <h2 style={{ marginTop: "1rem" }}>{title}</h2>
           <Cards animes={animes} />
         </React.Fragment>
       )}

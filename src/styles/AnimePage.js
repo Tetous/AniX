@@ -51,7 +51,7 @@ const AnimePage = styled.div`
 
   .episode {
     text-align: center;
-    padding: 0.3rem 0.8rem;
+    padding: 0.3rem 0.5rem;
     border-radius: 3px;
     background-color: var(--bg-nemesis);
   }

@@ -29,9 +29,10 @@ export const getAnime = async (slug) => {
 };
 
 export const getStream = async (url) => {
-  let endpoint = process.env.REACT_APP_CF_ENDPOINT;
-  endpoint += `/getAnixStream?url=${url}`;
+  let endpoint = process.env.REACT_APP_SCRAPER_ENDPOINT;
+  endpoint += `?url=${url}`;
+  endpoint += `&spider_name=stream`;
 
-  const { success, data } = await fetchWrapper(endpoint);
-  return { success, link: data.link };
+  const { status, items } = await fetchWrapper(endpoint);
+  return { status, link: items[0] };
 };

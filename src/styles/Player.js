@@ -3,7 +3,6 @@ import styled from "styled-components";
 const Player = styled.div`
   position: relative;
   width: 100%;
-  height: 50vh;
   border-radius: 4px;
 
   video {
@@ -17,9 +16,14 @@ const Player = styled.div`
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
     background-color: var(--plyr-overlay);
     padding: 0.5rem 1rem;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transform: ${(props) =>
+      !props.moveUp ? "translateY(-10px)" : "translateY(0)"};
+    transition: opacity 0.4s ease-in-out;
     opacity: 0;
   }
 
@@ -28,8 +32,8 @@ const Player = styled.div`
   }
 
   .progress-bar {
+    width: 80%;
     height: 6px;
-    width: 50%;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     margin: 0 0.8rem;
@@ -43,7 +47,7 @@ const Player = styled.div`
   }
 
   .volume {
-    margin-left: 4rem;
+    margin: 0 4rem;
   }
 
   .volume i {
@@ -66,12 +70,21 @@ const Player = styled.div`
     background-color: var(--green);
   }
 
-  @media screen and (max-width: 740px) {
-    height: 40vh;
+  @media screen and (max-width: 750px) {
+    .progress-bar {
+      width: 70%;
+      margin-right: 2rem;
+    }
+
+    .volume {
+      display: none;
+    }
   }
 
-  @media screen and (max-width: 620px) {
-    height: 30vh;
+  @media screen and (max-width: 750px) {
+    .progress-bar {
+      width: 50%;
+    }
   }
 `;
 

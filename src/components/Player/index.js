@@ -7,6 +7,7 @@ import StyledPlayer from "../../styles/Player";
 
 export default function Player({ src, poster }) {
   const [playing, setPlaying] = useState(null);
+  const [moveUp, setMoveUp] = useState(false);
   const playerRef = useRef(null);
 
   useEffect(() => {
@@ -22,11 +23,11 @@ export default function Player({ src, poster }) {
   }, [src]);
 
   return (
-    <StyledPlayer>
+    <StyledPlayer moveUp={moveUp}>
       <video ref={playerRef} src={src} poster={poster} />
 
       {src && (
-        <div className="plyr-controls flex-center">
+        <div className="plyr-controls flex-between">
           <PlayerPlay
             playing={playing}
             setPlaying={setPlaying}
@@ -37,7 +38,10 @@ export default function Player({ src, poster }) {
           <PlayerVolume player={playerRef.current} />
 
           <div className="flex-end">
-            <PlayerFullscreen player={playerRef.current} />
+            <PlayerFullscreen
+              player={playerRef.current}
+              setMoveUp={setMoveUp}
+            />
           </div>
         </div>
       )}

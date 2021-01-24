@@ -30,7 +30,7 @@ export const formatDate = (date) => {
 // is this hard to read?
 export const formatDesc = (desc) =>
   desc?.length > 580
-    ? desc?.substr(0, 580).split("\n").slice(0, 2).join("\n") + "..."
+    ? desc?.substr(0, 580).split("\n").slice(0, 2).join("\n")
     : desc;
 
 export const fetchWrapper = async (endpoint) => {

@@ -8,10 +8,10 @@ export default function Episodes({ setSrc, episodes }) {
   const getEpisode = async (idx, episode) => {
     setSelected(idx);
 
-    const { success, link } = await getStream(episode);
+    const { status, link } = await getStream(episode);
 
-    if (success) {
-      setSrc(link);
+    if (status === "ok") {
+      setSrc(link?.link);
     }
   };
 

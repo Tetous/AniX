@@ -1,5 +1,5 @@
 import StyledBadge from "../styles/Badge";
 
 export default function Badge({ text }) {
-  return <StyledBadge>{text}</StyledBadge>;
+  return <StyledBadge className="text-xs">{text}</StyledBadge>;
 }
