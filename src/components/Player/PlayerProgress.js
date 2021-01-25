@@ -6,6 +6,7 @@ export default function PlayerProgress({ player }) {
   const progressBarRef = useRef(null);
 
   const scrub = (e) => {
+    e.stopPropagation();
     const progress = progressRef.current;
     const scrubTime =
       (e.nativeEvent.offsetX / progress.offsetWidth) * player.duration;

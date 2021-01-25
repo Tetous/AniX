@@ -72,6 +72,7 @@ const AnimePage = styled.div`
 
   .pagination {
     margin-top: 2rem;
+    background-color: var(--bg-nemesis);
   }
 
   @media screen and (max-width: 1093px) {

@@ -14,23 +14,17 @@ const Player = styled.div`
     border-radius: 4px;
   }
 
-  .plyr-controls {
+  .player-controls {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: var(--plyr-overlay);
+    background-color: var(--player-overlay);
     padding: 0.5rem 1rem;
     width: 100%;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     transform: ${(props) =>
       !props.moveUp ? "translateY(-10px)" : "translateY(0)"};
-    transition: opacity 0.4s ease-in-out;
-    opacity: 0;
-  }
-
-  .plyr-controls:hover {
-    opacity: 1;
   }
 
   .progress-bar {
@@ -91,7 +85,17 @@ const Player = styled.div`
     height: ${(props) => (props.src ? "auto" : "200px")};
   }
 
+  @media screen and (max-width: 580px) {
+    .progress-bar {
+      width: 60%;
+    }
+  }
+
   @media screen and (max-width: 400px) {
+    .progress-bar {
+      width: 50%;
+    }
+
     height: ${(props) => (props.src ? "auto" : "150px")};
   }
 `;

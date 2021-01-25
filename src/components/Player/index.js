@@ -6,9 +6,13 @@ import PlayerPlay from "./PlayerPlay";
 import StyledPlayer from "../../styles/Player";
 
 export default function Player({ src, poster }) {
+  const playerRef = useRef(null);
+
   const [playing, setPlaying] = useState(null);
   const [moveUp, setMoveUp] = useState(false);
-  const playerRef = useRef(null);
+  const [showControls, setShowControls] = useState(false);
+
+  const toggleControls = () => setShowControls(!showControls);
 
   useEffect(() => {
     const player = playerRef.current;
@@ -23,11 +27,11 @@ export default function Player({ src, poster }) {
   }, [src]);
 
   return (
-    <StyledPlayer moveUp={moveUp} src={src}>
+    <StyledPlayer moveUp={moveUp} src={src} onClick={toggleControls}>
       <video ref={playerRef} src={src} poster={poster} />
 
-      {src && (
-        <div className="plyr-controls flex-between">
+      {src && showControls && (
+        <div className="player-controls flex-between">
           <PlayerPlay
             playing={playing}
             setPlaying={setPlaying}

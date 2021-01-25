@@ -11,14 +11,5 @@ export default function Paginate({ length, setPagination, start, end }) {
 
   if (true) return null;
 
-  return (
-    <div className="pagination flex-between">
-      <Button disabled={start === 0} onClick={prev}>
-        Prev
-      </Button>
-      <Button disabled={length <= end} onClick={next}>
-        Next
-      </Button>
-    </div>
-  );
+  return <div className="pagination"></div>;
 }

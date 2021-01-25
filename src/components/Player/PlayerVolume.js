@@ -5,7 +5,9 @@ export default function PlayerVolume({ player }) {
   const [volume, setVolume] = useState(0.5);
   const [muted, setMuted] = useState(false);
 
-  const toggleMute = () => {
+  const toggleMute = (e) => {
+    e.stopPropagation();
+
     if (muted) {
       player.muted = false;
       setMuted(false);
