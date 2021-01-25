@@ -5,7 +5,7 @@ const getRomaji = async (title) => {
   endpoint += `/getAnixRomaji?title=${title}`;
 
   const { success, data } = await fetchWrapper(endpoint);
-  return { success, title: data.title };
+  return { success, title: data?.title };
 };
 
 export const searchAnimes = async (searchTerm) => {

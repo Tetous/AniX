@@ -27,6 +27,15 @@ const AnimePage = styled.div`
     margin-top: -8rem;
   }
 
+  .banner-info h2 {
+    margin-bottom: 0.8rem;
+  }
+
+  .banner-info i {
+    position: relative;
+    top: -15px;
+  }
+
   .info {
     width: 200px;
     background-color: var(--bg-nemesis);
@@ -59,6 +68,10 @@ const AnimePage = styled.div`
   .selected {
     background-color: var(--green);
     color: var(--white);
+  }
+
+  .pagination {
+    margin-top: 2rem;
   }
 
   @media screen and (max-width: 1093px) {

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Episode from "./Episode";
 import { getStream } from "../utils/api";
 
-export default function Episodes({ setSrc, episodes }) {
+export default function Episodes({ setSrc, episodes, start, end }) {
   const [selected, setSelected] = useState(null);
 
   const getEpisode = async (idx, episode) => {
@@ -17,11 +17,11 @@ export default function Episodes({ setSrc, episodes }) {
 
   return (
     <div className="episodes">
-      {episodes?.slice(0, 24).map((episode, idx) => (
+      {episodes?.slice(start, end).map((episode, idx) => (
         <Episode
           key={episode}
           episode={episode}
-          idx={idx}
+          idx={start + idx}
           getEpisode={getEpisode}
           selected={selected}
         />

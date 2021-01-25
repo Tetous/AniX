@@ -4,6 +4,7 @@ import SearchWrapper from "../components/SearchWrapper";
 import HomePageSkeleton from "../skeletons/HomePageSkeleton";
 import useLoading from "../hooks/useLoading";
 import Layout from "../styles/Layout";
+import NoResults from "../components/NoResults";
 import data from "../data/top_animes.json";
 
 export default function HomePage() {
@@ -19,10 +20,12 @@ export default function HomePage() {
 
       {!isLoading && (
         <React.Fragment>
-          <h2 style={{ marginTop: "1rem" }}>{title}</h2>
+          {!!animes.length && <h2 style={{ marginTop: "1rem" }}>{title}</h2>}
           <Cards animes={animes} />
         </React.Fragment>
       )}
+
+      {!isLoading && !animes.length && <NoResults />}
     </Layout>
   );
 }

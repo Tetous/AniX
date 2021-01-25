@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PlayerIcon from "./PlayerIcon";
 
 export default function PlayerVolume({ player }) {
-  const [volume, setVolume] = useState(1);
+  const [volume, setVolume] = useState(0.5);
   const [muted, setMuted] = useState(false);
 
   const toggleMute = () => {

@@ -45,6 +45,11 @@ const GlobalStyle = createGlobalStyle`
 	img {
 		object-fit: cover;
 	}
+
+	button[disabled] {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
 `;
 
 export default GlobalStyle;

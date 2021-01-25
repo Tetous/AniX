@@ -16,8 +16,8 @@ export default function ToggleTheme() {
 
   return (
     <i
-      className="fal fa-toggle-on fa-lg absolute pointer"
-      style={{ right: "0", top: "35px", fontSize: "1.6rem" }}
+      className="fal fa-toggle-on fa-lg pointer"
+      style={{ fontSize: "1.6rem" }}
       onClick={toggleTheme}
     />
   );

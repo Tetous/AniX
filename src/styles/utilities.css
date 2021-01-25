@@ -6,6 +6,10 @@
   margin-right: 0.8rem;
 }
 
+.margin-t {
+  margin-top: 2rem;
+}
+
 .text-xs {
   font-size: 0.8rem;
 }
@@ -18,12 +22,23 @@
   color: var(--secondary-color);
 }
 
+.h-full {
+  height: 100vh;
+}
+
 .relative {
   position: relative;
 }
 
 .absolute {
   position: absolute;
+}
+
+/* c - center */
+.flex-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flex-center {

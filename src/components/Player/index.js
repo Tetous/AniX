@@ -23,7 +23,7 @@ export default function Player({ src, poster }) {
   }, [src]);
 
   return (
-    <StyledPlayer moveUp={moveUp}>
+    <StyledPlayer moveUp={moveUp} src={src}>
       <video ref={playerRef} src={src} poster={poster} />
 
       {src && (

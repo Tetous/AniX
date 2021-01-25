@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Player = styled.div`
   position: relative;
   width: 100%;
+  height: ${(props) => (props.src ? "auto" : "350px")};
   border-radius: 4px;
   color: var(--white);
 
@@ -71,6 +72,10 @@ const Player = styled.div`
     background-color: var(--green);
   }
 
+  @media screen and (max-width: 800px) {
+    height: ${(props) => (props.src ? "auto" : "300px")};
+  }
+
   @media screen and (max-width: 750px) {
     .progress-bar {
       width: 70%;
@@ -82,10 +87,12 @@ const Player = styled.div`
     }
   }
 
-  @media screen and (max-width: 750px) {
-    .progress-bar {
-      width: 50%;
-    }
+  @media screen and (max-width: 600px) {
+    height: ${(props) => (props.src ? "auto" : "200px")};
+  }
+
+  @media screen and (max-width: 400px) {
+    height: ${(props) => (props.src ? "auto" : "150px")};
   }
 `;
 
