@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
 		color: var(--primary-color);
 		overflow-x: hidden;
 		line-height: 1.8;
+		transition: background 0.3s ease-out;
 	}
 
 	h1, h2, h3, h4, h5, h6 {

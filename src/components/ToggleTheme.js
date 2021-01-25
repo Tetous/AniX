@@ -1,16 +1,16 @@
-import { useState } from "react";
 import changeTheme from "../utils/theme";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function ToggleTheme() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useLocalStorage("dark", "theme");
 
   const toggleTheme = () => {
     if (theme === "dark") {
-      setTheme("light");
       changeTheme("light");
+      setTheme("light");
     } else {
-      setTheme("dark");
       changeTheme("dark");
+      setTheme("dark");
     }
   };
 

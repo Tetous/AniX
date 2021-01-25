@@ -4,12 +4,11 @@ import StyledInput from "../styles/Input";
 import { searchAnimes } from "../utils/api";
 import data from "../data/top_animes.json";
 
-const Search = ({ setAnimes, setTitle, setLoading }) => {
+const Search = ({ setAnimes, setTitle, load }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const reset = () => {
     setAnimes(data);
-    setLoading(false);
     setTitle("Top Animes");
     setSearchTerm("");
   };
@@ -25,15 +24,13 @@ const Search = ({ setAnimes, setTitle, setLoading }) => {
 
   const handleSearch = async (e) => {
     if (e.key === "Enter") {
-      setLoading(true);
-
-      const { status, animes } = await searchAnimes(searchTerm);
-      setLoading(false);
-
-      if (status === "ok") {
-        setTitle("Search Results");
-        setAnimes(animes);
-      }
+      load(
+        searchAnimes(searchTerm).then((data) => {
+          if (data.status === "ok") {
+            setAnimes(data.animes);
+          }
+        })
+      );
     }
   };
 
