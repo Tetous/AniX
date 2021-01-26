@@ -27,7 +27,6 @@ const Search = ({ setAnimes, setTitle, load }) => {
       load(
         searchAnimes(searchTerm).then((data) => {
           if (data.status === "ok") {
-            console.log(data);
             setAnimes(data.animes);
             setTitle("Search Results");
           }

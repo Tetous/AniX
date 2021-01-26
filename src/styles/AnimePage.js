@@ -6,6 +6,7 @@ const AnimePage = styled.div`
     width: 100%;
     height: 280px;
     display: block;
+    filter: brightness(0.6);
   }
 
   .banner-shell {
@@ -25,6 +26,7 @@ const AnimePage = styled.div`
     border-radius: 5px;
     margin-right: 2rem;
     margin-top: -8rem;
+    z-index: 10;
   }
 
   .banner-info h2 {
@@ -71,8 +73,16 @@ const AnimePage = styled.div`
   }
 
   .pagination {
+    margin: auto;
     margin-top: 2rem;
+    max-width: 200px;
     background-color: var(--bg-nemesis);
+    border-radius: 40px;
+    padding: 0.2rem 0;
+  }
+
+  .pagination p span:nth-child(2) {
+    padding: 0 0.4rem;
   }
 
   @media screen and (max-width: 1093px) {
@@ -86,6 +96,9 @@ const AnimePage = styled.div`
   }
 
   @media screen and (max-width: 1000px) {
+    .pagination {
+    }
+
     .center {
       grid-template-columns: 1fr;
     }

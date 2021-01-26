@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
 		object-fit: cover;
 	}
 
-	button[disabled] {
+	.disabled {
 		cursor: not-allowed;
 		opacity: 0.5;
 	}

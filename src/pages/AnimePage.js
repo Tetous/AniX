@@ -17,11 +17,11 @@ export default function AnimePage() {
 
   const [anime, setAnime] = useState(null);
   const [src, setSrc] = useState(null);
+
   const [pagination, setPagination] = useState({
     start: 0,
     end: 12,
   });
-
   const { start, end } = pagination;
 
   useEffect(() => {
@@ -71,12 +71,14 @@ export default function AnimePage() {
             start={start}
             end={end}
           />
-          <Pagination
-            start={start}
-            end={end}
-            length={anime?.episodes}
-            setPagination={setPagination}
-          />
+          {anime?.episode_links.length > 12 && (
+            <Pagination
+              start={start}
+              end={end}
+              setPagination={setPagination}
+              episodes={anime?.episode_links.length}
+            />
+          )}
         </div>
       </div>
     </StyledAnimePage>
