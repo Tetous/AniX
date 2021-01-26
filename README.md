@@ -1,6 +1,6 @@
 # AniX - Stream Animes
 
-<img style="border-radius: 4px; margin-bottom: 16px" src="screenshots/cb.png" alt="banner" height="280">
+<img style="object-fit: contain; border-radius: 4px; margin-bottom: 16px" src="screenshots/cb.png" alt="banner" height="280">
 
 AniX uses scraped data to allow the users watch, download their favorite animes. The scraping part is managed by python scrapy framework. If you are interested in looking at the backend code, [click here](https://gitlab.com/manikandanraji/anix-backend).
 
